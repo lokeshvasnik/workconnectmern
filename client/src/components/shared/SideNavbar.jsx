@@ -32,7 +32,7 @@ const SideNavbar = () => {
         <div className="flex-grow">
           <div className="border-b px-4 py-6 text-center">
             <Link to="/">
-              <img class="w-96" src="./workconnectlogo.svg" alt="" />
+              <img class="w-96" src="./workconnect_logo.png" alt="" />
             </Link>
           </div>
           <div className="p-4">

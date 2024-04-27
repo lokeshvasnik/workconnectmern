@@ -13,18 +13,8 @@ const Navbar = ({ handleLogout }) => {
 
   return (
     <>
-      <nav className="border-gray-200 bg-white dark:bg-gray-900">
+      <nav className="border-gray-200 bg-white">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-          {userData.token ? (
-            ""
-          ) : (
-            <ul className="flex space-x-10">
-              <li>FAQ</li>
-              <li>MODE</li>
-              <li>CONTACT US</li>
-            </ul>
-          )}
-
           <div className=" flex space-x-3 md:order-2 md:space-x-5 rtl:space-x-reverse">
             {userData.token ? (
               <button
@@ -58,7 +48,7 @@ const Navbar = ({ handleLogout }) => {
             <button
               data-collapse-toggle="navbar-cta"
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
               aria-controls="navbar-cta"
               aria-expanded="false"
             >
@@ -84,12 +74,12 @@ const Navbar = ({ handleLogout }) => {
             className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
             id="navbar-cta"
           >
-            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900">
+            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse">
               {userData.token ? (
                 ""
               ) : (
                 <Link to="/">
-                  <img className="w-72" src="./workconnectlogo.svg" alt="" />
+                  <img className="w-72" src="./workconnect_logo.png" alt="" />
                 </Link>
               )}
             </ul>

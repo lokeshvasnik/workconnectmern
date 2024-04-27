@@ -2,13 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { useUser } from "../backend/hooks/useUser";
 import { getLocation } from "../utils/location";
 
 const Dashboard = () => {
   const [userJob, setUserJob] = useState([]);
   const [location, setLocation] = useState("");
-  const { user } = useUser();
 
   // FETCH ON MOUNT
   useEffect(() => {

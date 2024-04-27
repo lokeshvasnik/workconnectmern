@@ -113,11 +113,11 @@ const Home = () => {
       <Fade className="mx-20 my-10 flex flex-col items-center justify-center rounded-[48px] bg-white p-48">
         <div>
           <h1 class="my-thing text-bold mx-auto text-center text-[54px] font-bold md:w-[752px]">
-            Find your suitable service.
+            Find your suitable person.
           </h1>
           <p class="mb-10 w-[900px] text-center text-[22px]">
-            Get all the local jobs listing available near your locality in just
-            simple clicks.
+            Get all the local works/tasks listing available near your locality
+            in just simple clicks.
           </p>
           <div className="flex space-x-10">
             <div class="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
@@ -130,15 +130,7 @@ const Home = () => {
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title mx-auto">Repairing Work</h2>
-                  <div className="card-actions justify-end">
-                    <button
-                      type="button"
-                      class="text-medium w-full rounded-full bg-[#F7D046] p-4 px-6 text-center text-sm font-bold text-black"
-                    >
-                      Get Details
-                    </button>
-                  </div>
+                  <h2 className="card-title mx-auto">Find Cook</h2>
                 </div>
               </div>
             </div>
@@ -151,15 +143,7 @@ const Home = () => {
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title mx-auto">Repairing Work</h2>
-                  <div className="card-actions justify-end">
-                    <button
-                      type="button"
-                      class="text-medium w-full rounded-full bg-[#F7D046] p-4 px-6 text-center text-sm font-bold text-black"
-                    >
-                      Get Details
-                    </button>
-                  </div>
+                  <h2 className="card-title mx-auto">Find Car Washer</h2>
                 </div>
               </div>
             </div>
@@ -173,15 +157,7 @@ const Home = () => {
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title mx-auto">Find Carpainters</h2>
-                  <div className="card-actions justify-end">
-                    <button
-                      type="button"
-                      class="text-medium w-full rounded-full bg-[#F7D046] p-4 px-6 text-center text-sm font-bold text-black"
-                    >
-                      Get Details
-                    </button>
-                  </div>
+                  <h2 className="card-title mx-auto">Find Dog Trainer</h2>
                 </div>
               </div>
             </div>

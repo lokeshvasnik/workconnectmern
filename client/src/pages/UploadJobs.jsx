@@ -12,6 +12,7 @@ const CreateJobs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
   const [image, setFiles] = useState("");
 
+  console.log(userJobData);
   const {
     register,
     handleSubmit,
@@ -25,7 +26,7 @@ const CreateJobs = () => {
         const userJobs = await axios.get(
           `http://localhost:3000/getUserJob?user_id=${userData?.user?.id}`,
         );
-        setdata(userJobs);
+        setdata(userJobs.data);
       } catch (error) {
         console.log(error);
       }
@@ -109,6 +110,7 @@ const CreateJobs = () => {
     }
   };
 
+  console.log(userJobData.length);
   return (
     <section className="px-6 py-8">
       <div>
@@ -120,17 +122,15 @@ const CreateJobs = () => {
         {userJobData.length === 0 ? (
           <div className="col-span-9 text-center text-2xl">No uploads yet.</div>
         ) : (
-          userJobData?.data?.map((item) => (
+          userJobData?.map((item) => (
             <div className="col-span-3" key={item._id}>
               <div className="mb-5 w-80 rounded-lg bg-white p-8">
                 <div>
-                  <div>
-                    <img
-                      src={`http://localhost:3000/${item.image}`}
-                      className="w-16 rounded-md"
-                      alt=""
-                    />
-                  </div>
+                  <img
+                    src={`http://localhost:3000/${item.image}`}
+                    className="w-32 rounded-md"
+                    alt=""
+                  />
                   <div className="mt-4">
                     <p>{item.title}</p>
                     <p>
@@ -158,6 +158,7 @@ const CreateJobs = () => {
           ))
         )}
       </div>
+
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 overflow-y-auto">

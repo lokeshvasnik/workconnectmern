@@ -113,4 +113,33 @@ userRouter.get("/getUserProfile", async (req, res) => {
     }
 });
 
+userRouter.put("/updateUserProfile/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        // const updatedJobData = req.body;
+        const { username, number } = req.body;
+
+        //
+
+        const updateUserProfile = await User.findByIdAndUpdate(
+            { _id: id },
+            {
+                username,
+                number,
+            },
+            {
+                new: true,
+            }
+        );
+
+        if (!updateUserProfile) {
+            return res.status(404).json({ message: "Job not found." });
+        }
+
+        res.status(200).json(updateUserProfile);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
 export default userRouter;

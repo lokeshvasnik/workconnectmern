@@ -120,7 +120,7 @@ jobRouter.put("/update/:id", upload.single("image"), async (req, res) => {
         // const updatedJobData = req.body;
         const { title, description, location, pincode, user_id, image } =
             req.body;
-        console.log(image);
+
         // Ensure that required fields are provided
         // if (!updatedJobData) {
         //     return res

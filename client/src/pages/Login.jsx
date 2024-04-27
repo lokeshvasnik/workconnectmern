@@ -87,7 +87,7 @@ const Login = () => {
           {errors.password && (
             <span className="text-red-500">{errors.password.message}</span>
           )}
-          <Button type="submit">Submit</Button>
+          <button className="formbold-btn">Submit</button>
           <p className="mt-4">
             Don’t have an account yet?
             <Link to="/register" className="ml-2  text-sky-300 underline">

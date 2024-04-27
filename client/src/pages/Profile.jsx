@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import UserContext from "../context/UserContext";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const Profile = () => {
   // const [images, setImages] = React.useState([]);
   const [profile, setProfileData] = useState([]);
   const { userData } = useContext(UserContext);
 
+  console.log();
   const {
     register,
     handleSubmit,
@@ -26,10 +28,25 @@ const Profile = () => {
   }, []);
 
   const onSubmitHandler = async (formData) => {
-    console.log(images);
+    console.log(formData);
+    try {
+      // const newUser = { email, password, confirmPassword, username };
+      const { username, number } = formData;
+
+      await axios.put(
+        `http://localhost:3000/updateUserProfile/${userData.user.id}`,
+        {
+          username,
+          number,
+        },
+      );
+
+      toast.success("Sucessfully Updated");
+    } catch (err) {
+      toast.error(err.response.data.msg);
+    }
   };
 
-  console.log(profile.data);
   return (
     <>
       <div className="px-6 py-8">
@@ -54,6 +71,7 @@ const Profile = () => {
 
         {/* Update Profile */}
 
+        <h2 className="mb-4 text-2xl font-bold">Update Profile</h2>
         <div class="formbold-form-wrapper mx-0">
           <form
             className="rounded-xl p-20"
@@ -62,15 +80,15 @@ const Profile = () => {
             <div class="formbold-input-flex">
               <div>
                 <label for="firstname" class="formbold-form-label">
-                  Username{" "}
+                  Full Name{" "}
                 </label>
                 <input
                   type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Username"
+                  name="username"
+                  id="username"
+                  placeholder="Full Name"
                   class="formbold-form-input"
-                  {...register("name", {
+                  {...register("username", {
                     required: "Username is required",
                   })}
                 />
@@ -86,8 +104,8 @@ const Profile = () => {
                   id="number"
                   placeholder="000 000 0000"
                   class="formbold-form-input"
-                  {...register("location", {
-                    required: "Location is required",
+                  {...register("number", {
+                    required: "Number is required",
                   })}
                 />
               </div>

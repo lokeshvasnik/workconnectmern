@@ -54,11 +54,6 @@ const Footer = () => {
     // </footer>
 
     <footer className="footer footer-center rounded bg-white p-10 text-black">
-      <nav className="grid grid-flow-col gap-4">
-        <a className="link-hover link">About us</a>
-        <a className="link-hover link">Contact</a>
-        <a className="link-hover link">Jobs</a>
-      </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
           <Link to="/">
@@ -68,6 +63,7 @@ const Footer = () => {
       </nav>
       <aside>
         <p>Copyright © 2024 - All right reserved by Work Connect</p>
+        <p>Developed by Sajid & Lokesh</p>
       </aside>
     </footer>
   );
