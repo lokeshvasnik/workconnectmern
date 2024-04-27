@@ -41,7 +41,7 @@ const App = () => {
         token = "";
       }
       const tokenResponse = await axios.post(
-        "http://localhost:3000/tokenIsValid",
+        `${import.meta.env.VITE_API_URL}/tokenIsValid`,
         null,
         { headers: { "x-auth-token": token } },
       );

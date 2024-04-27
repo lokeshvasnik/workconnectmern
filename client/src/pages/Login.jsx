@@ -1,11 +1,10 @@
 import axios from "axios";
-import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import Button from "../components/shared/Button";
-import Input from "../components/shared/Input";
 import { useContext } from "react";
-import UserContext from "../context/UserContext";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import Input from "../components/shared/Input";
+import UserContext from "../context/UserContext";
 
 const Login = () => {
   const {
@@ -28,10 +27,13 @@ const Login = () => {
     try {
       // const newUser = { email, password, confirmPassword, username };
       const { email, password } = formData;
-      const loginRes = await axios.post("http://localhost:3000/login", {
-        email,
-        password,
-      });
+      const loginRes = await axios.post(
+        `${import.meta.env.VITE_API_URL}/login`,
+        {
+          email,
+          password,
+        },
+      );
       setUserData({
         token: loginRes.data.token,
         user: loginRes.data.user,
@@ -47,13 +49,13 @@ const Login = () => {
   }
 
   return (
-    <section className="my-20">
-      <div className="flex h-full flex-col items-center justify-center">
+    <section>
+      <div className="flex h-screen flex-col items-center justify-center border">
         <h1 className="my-3 text-center text-4xl uppercase tracking-wider">
           Welcome Back
         </h1>
         <form
-          className="mt-5 flex h-full flex-col rounded-md bg-white p-20 "
+          className="mt-5 flex  flex-col rounded-md bg-white p-20 "
           onSubmit={handleSubmit(onSubmitHandler)}
         >
           <Input
@@ -88,6 +90,11 @@ const Login = () => {
             <span className="text-red-500">{errors.password.message}</span>
           )}
           <button className="formbold-btn">Submit</button>
+          {/* <button className="btn">
+
+            <span className="loading loading-spinner"></span>
+            Submit
+          </button> */}
           <p className="mt-4">
             Don’t have an account yet?
             <Link to="/register" className="ml-2  text-sky-300 underline">

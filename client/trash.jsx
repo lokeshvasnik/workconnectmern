@@ -454,7 +454,7 @@ const CreateJobs = () => {
     console.log(formData);
     try {
       const response = await axios.put(
-        `http://localhost:3000/update/${jobId}`,
+        `${import.meta.env.VITE_API_URL}/update/${jobId}`,
         formData,
       );
 

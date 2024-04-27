@@ -35,8 +35,17 @@ span {
   font-family: "Circular-Bold";
 }
 
+p {
+  font-family: "Circular", Arial, sans-serif;
+}
+
 button {
   font-family: "Circular-Bold";
+}
+
+.btn {
+  @apply rounded-full;
+  @apply: bg-white;
 }
 
 .custom-input {

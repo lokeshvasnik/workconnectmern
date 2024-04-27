@@ -41,7 +41,7 @@ const Home = () => {
           <div className="col-span-3">
             <img
               ref={ref}
-              src="./testione.png"
+              src="./jayesh_tak.png"
               className="w-44  cursor-pointer rounded-[24px] border"
               alt=""
             />
@@ -124,8 +124,7 @@ const Home = () => {
               <div className="card glass w-64 bg-base-100 shadow-xl">
                 <figure>
                   <img
-                    src="	https://akam.cdn.jdmagicbox.com/images/website/packersandmovers.png
-                  "
+                    src="https://media.istockphoto.com/id/1449552590/photo/portrait-of-indian-woman-enjoying-while-cooking-meal-in-the-kitchen-stock-photo.jpg?s=612x612&w=0&k=20&c=sSSFGWffGnjDJEX_VCA3YQ5B3T1jQ_0kCbPTL0BItlg="
                     alt="Shoes"
                   />
                 </figure>
@@ -137,10 +136,7 @@ const Home = () => {
             <div class="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
               <div className="card glass w-64 bg-base-100 shadow-xl">
                 <figure>
-                  <img
-                    src="https://akam.cdn.jdmagicbox.com/images/website/ac_repairs.png"
-                    alt="Shoes"
-                  />
+                  <img src="./car_washer.jpg" alt="Shoes" />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title mx-auto">Find Car Washer</h2>
@@ -152,7 +148,7 @@ const Home = () => {
               <div className="card glass w-64 bg-base-100 shadow-xl">
                 <figure>
                   <img
-                    src="https://akam.cdn.jdmagicbox.com/images/website/carpenter.png"
+                    src="https://qph.cf2.quoracdn.net/main-qimg-56fad305fc7134be522d1c4e73521f09"
                     alt="Shoes"
                   />
                 </figure>
@@ -170,11 +166,13 @@ const Home = () => {
           <h1 class="my-thing text-bold mx-auto text-center text-[54px] font-bold md:w-[752px]">
             Access Everything Within Your Dashboard.
           </h1>
-          <p class="mb-10 w-[900px] text-center text-[22px]">
-            Simple Minimal Dashboard
-          </p>
+          <p class="mb-10  text-center text-[22px]">Simple Minimal Dashboard</p>
           <div>
-            <img className="mx-auto" src="./dashboard.png" alt="" />
+            <img
+              className="mx-auto rounded-lg  border-4 p-10"
+              src="./workconnect_dashboard.png"
+              alt=""
+            />
           </div>
         </div>
       </Fade>

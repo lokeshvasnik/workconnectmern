@@ -6,25 +6,27 @@ import { getLocation } from "../utils/location";
 
 const Dashboard = () => {
   const [userJob, setUserJob] = useState([]);
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("400028");
 
-  // FETCH ON MOUNT
-  useEffect(() => {
-    async function fetchLocation() {
-      try {
-        const { postcode } = await getLocation();
-        setLocation(postcode);
-      } catch (error) {
-        console.error(error);
-      }
-    }
+  // // FETCH ON MOUNT
+  // useEffect(() => {
+  //   async function fetchLocation() {
+  //     try {
+  //       const { postcode } = await getLocation();
+  //       setLocation(postcode);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
 
-    fetchLocation();
-  }, []);
+  //   fetchLocation();
+  // }, []);
 
   useEffect(() => {
     const getUserJobsDetails = async () => {
-      const userJobs = await axios.get(`http://localhost:3000/getJobs`);
+      const userJobs = await axios.get(
+        `${import.meta.env.VITE_API_URL}/getJobs`,
+      );
       setUserJob(userJobs);
     };
     getUserJobsDetails();

@@ -24,7 +24,9 @@ const CreateJobs = () => {
     const getUserJobsDetails = async () => {
       try {
         const userJobs = await axios.get(
-          `http://localhost:3000/getUserJob?user_id=${userData?.user?.id}`,
+          `${import.meta.env.VITE_API_URL}/getUserJob?user_id=${
+            userData?.user?.id
+          }`,
         );
         setdata(userJobs.data);
       } catch (error) {
@@ -37,7 +39,7 @@ const CreateJobs = () => {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/delete/${id}`,
+        `${import.meta.env.VITE_API_URL}/delete/${id}`,
         {
           method: "DELETE",
         },
@@ -55,11 +57,11 @@ const CreateJobs = () => {
   const editHandler = (id) => {
     console.log(id);
     setJobId(id);
-    setIsModalOpen(true); // Open modal when edit button is clicked
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // Close modal
+    setIsModalOpen(false);
   };
 
   const onSubmitHandler = async (formData) => {
@@ -71,7 +73,7 @@ const CreateJobs = () => {
     };
     try {
       const response = await axios.put(
-        `http://localhost:3000/update/${jobId}`,
+        `${import.meta.env.VITE_API_URL}/update/${jobId}`,
         {
           title,
           description,

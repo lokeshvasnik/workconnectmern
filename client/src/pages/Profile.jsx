@@ -20,7 +20,9 @@ const Profile = () => {
   useEffect(() => {
     const getUserJobsDetails = async () => {
       const userJobs = await axios.get(
-        `http://localhost:3000/getUserProfile?user_id=${userData.user.id}`,
+        `${import.meta.env.VITE_API_URL}/getUserProfile?user_id=${
+          userData.user.id
+        }`,
       );
       setProfileData(userJobs);
     };

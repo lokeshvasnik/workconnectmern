@@ -7,7 +7,9 @@ const App = () => {
 
     useEffect(() => {
         const getUserJobsDetails = async () => {
-            const userJobs = await fetch(`http://localhost:3000/getJobs`);
+            const userJobs = await fetch(
+                `${import.meta.env.VITE_API_URL}/getJobs`
+            );
             const resp = await userJobs.json();
             setUserJob(resp);
         };
@@ -16,7 +18,7 @@ const App = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/delete/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_API_URL}/delete/${id}`, {
                 method: "DELETE",
             });
         } catch (error) {
@@ -144,7 +146,8 @@ const App = () => {
                                         </td>
                                     </tr>
                                 ))}
-                            </tbody>eer
+                            </tbody>
+                            eer
                         </table>
                     </div>
                 </section>

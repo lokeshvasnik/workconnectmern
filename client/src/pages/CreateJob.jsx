@@ -46,7 +46,7 @@ const CreateJob = () => {
         },
       };
       await axios.post(
-        "http://localhost:3000/upload",
+        `${import.meta.env.VITE_API_URL}/upload`,
         {
           title,
           description,
@@ -62,7 +62,6 @@ const CreateJob = () => {
 
       toast.success("Sucessfully Added");
     } catch (err) {
-      // err.response.data.msg && setError(err.response.data.msg);
       console.log(err);
       toast.error(err.response.data.msg);
     }
