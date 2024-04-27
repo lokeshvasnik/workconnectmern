@@ -8,21 +8,18 @@ import {
 import { useState, useEffect } from "react";
 import UserContext from "./context/UserContext";
 import axios from "axios";
-import "./App.css";
 import Loader from "./components/UI/Loader";
 import Navbar from "./components/shared/Navbar";
-import { Navigate } from "react-router-dom";
+import "./App.css";
+
 const Home = lazy(() => import("./pages/Home"));
 const CreateJobs = lazy(() => import("./pages/CreateJob"));
-// const UploadJobs = lazy(() => import("./pages/UploadJobs"));
 const Profile = lazy(() => import("./pages/Profile"));
 const LoginPage = lazy(() => import("./pages/Login"));
 const RegisterPage = lazy(() => import("./pages/Register"));
-const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const EmailPage = lazy(() => import("./pages/EmailPage"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
-const UpdatePassword = lazy(() => import("./pages/UpdatePassword"));
 const UploadJobs = lazy(() => import("./pages/UploadJobs"));
 
 import AppLayout from "./components/UI/AppLayout";
