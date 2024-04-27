@@ -60,8 +60,8 @@ const Home = () => {
           </div>
 
           <div className="col-span-6 col-start-4">
-            <div class="flex h-full flex-col  items-center justify-center py-20">
-              <h1 class="my-thing text-bold text-center text-[54px] font-bold md:w-[752px]">
+            <div className="flex h-full flex-col  items-center justify-center py-20">
+              <h1 className="my-thing text-bold text-center text-[54px] font-bold md:w-[752px]">
                 Connecting People
                 <Typewriter
                   options={{
@@ -72,14 +72,14 @@ const Home = () => {
                 />
               </h1>
 
-              <p class="w-[900px] text-center text-[22px]">
+              <p className="w-[900px] text-center text-[22px]">
                 WorkConnect Is An Innovative Online Platform Designed <br />
                 To Facilitate Local Collaboration By Connecting Users Who Need
                 Assistance <br /> With Their Day-To-Day Tasks.
               </p>
               <button
                 type="button"
-                class="my-10 rounded-full bg-[#FFDD00] p-4 px-6 text-center text-2xl font-bold text-black"
+                className="my-10 rounded-full bg-[#FFDD00] p-4 px-6 text-center text-2xl font-bold text-black"
               >
                 Join Now
               </button>
@@ -112,15 +112,15 @@ const Home = () => {
 
       <Fade className="mx-20 my-10 flex flex-col items-center justify-center rounded-[48px] bg-white p-48">
         <div>
-          <h1 class="my-thing text-bold mx-auto text-center text-[54px] font-bold md:w-[752px]">
+          <h1 className="my-thing text-bold mx-auto text-center text-[54px] font-bold md:w-[752px]">
             Find your suitable person.
           </h1>
-          <p class="mb-10 w-[900px] text-center text-[22px]">
+          <p className="mb-10 w-[900px] text-center text-[22px]">
             Get all the local works/tasks listing available near your locality
             in just simple clicks.
           </p>
           <div className="flex space-x-10">
-            <div class="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
+            <div className="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
               <div className="card glass w-64 bg-base-100 shadow-xl">
                 <figure>
                   <img
@@ -133,7 +133,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div class="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
+            <div className="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
               <div className="card glass w-64 bg-base-100 shadow-xl">
                 <figure>
                   <img src="./car_washer.jpg" alt="Shoes" />
@@ -144,7 +144,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div class="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
+            <div className="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
               <div className="card glass w-64 bg-base-100 shadow-xl">
                 <figure>
                   <img
@@ -163,10 +163,12 @@ const Home = () => {
 
       <Fade className="mx-20 my-10 flex flex-col items-center justify-center rounded-[48px] bg-white p-48">
         <div>
-          <h1 class="my-thing text-bold mx-auto text-center text-[54px] font-bold md:w-[752px]">
+          <h1 className="my-thing text-bold mx-auto text-center text-[54px] font-bold md:w-[752px]">
             Access Everything Within Your Dashboard.
           </h1>
-          <p class="mb-10  text-center text-[22px]">Simple Minimal Dashboard</p>
+          <p className="mb-10  text-center text-[22px]">
+            Simple Minimal Dashboard
+          </p>
           <div>
             <img
               className="mx-auto rounded-lg  border-4 p-10"

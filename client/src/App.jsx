@@ -1,23 +1,16 @@
-import { Suspense, lazy } from "react";
-import {
-  Route,
-  BrowserRouter as Router,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
-import { useState, useEffect } from "react";
-import UserContext from "./context/UserContext";
 import axios from "axios";
+import { Suspense, lazy, useEffect, useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
 import Loader from "./components/UI/Loader";
 import Navbar from "./components/shared/Navbar";
-import "./App.css";
+import UserContext from "./context/UserContext";
 
 const Home = lazy(() => import("./pages/Home"));
 const CreateJobs = lazy(() => import("./pages/CreateJob"));
 const Profile = lazy(() => import("./pages/Profile"));
 const LoginPage = lazy(() => import("./pages/Login"));
 const RegisterPage = lazy(() => import("./pages/Register"));
-const EmailPage = lazy(() => import("./pages/EmailPage"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const UploadJobs = lazy(() => import("./pages/UploadJobs"));
@@ -29,7 +22,6 @@ const App = () => {
     user: undefined,
   });
 
-  console.log(userData);
   useEffect(() => {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
@@ -86,9 +78,6 @@ const App = () => {
             {/* Define non-protected routes */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/email" element={<EmailPage />} />
-            <Route path="/forgot" element={<ForgotPassword />} />
-            <Route path="/update" element={<UpdatePassword />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Suspense>
