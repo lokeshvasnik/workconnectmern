@@ -70,9 +70,9 @@ const CreateJob = () => {
   return (
     <section className="my-0">
       <div class="formbold-main-wrapper">
-        <div class="formbold-form-wrapper">
+        <div class="formbold-form-wrapper m-3">
           <form
-            className="rounded-xl p-20"
+            className="rounded-xl p-10 md:p-20"
             onSubmit={handleSubmit(onSubmitHandler)}
           >
             <div class="formbold-input-flex">

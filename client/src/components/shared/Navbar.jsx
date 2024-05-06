@@ -15,7 +15,7 @@ const Navbar = ({ handleLogout }) => {
     <>
       <nav className="border-gray-200 bg-white">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-          <div className=" flex space-x-3 md:order-2 md:space-x-5 rtl:space-x-reverse">
+          <div className="flex space-x-4 md:order-2 md:space-x-5 rtl:space-x-reverse">
             {userData.token ? (
               <button
                 type="button"

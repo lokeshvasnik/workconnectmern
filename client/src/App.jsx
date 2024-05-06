@@ -1,10 +1,10 @@
 import axios from "axios";
 import { Suspense, lazy, useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import "./App.css";
 import Loader from "./components/UI/Loader";
 import Navbar from "./components/shared/Navbar";
 import UserContext from "./context/UserContext";
+import "./App.css";
 
 const Home = lazy(() => import("./pages/Home"));
 const CreateJobs = lazy(() => import("./pages/CreateJob"));

@@ -38,10 +38,10 @@ const Home = () => {
     <section>
       <Fade cascade>
         <div className="mt-10 grid grid-cols-12 grid-rows-1 gap-4">
-          <div className="col-span-3">
+          <div className="col-span-3 hidden md:block">
             <img
               ref={ref}
-              src="./jayesh_tak.png"
+              src="./jayesh.png"
               className="w-44  cursor-pointer rounded-[24px] border"
               alt=""
             />
@@ -53,56 +53,56 @@ const Home = () => {
             />
             <img
               ref={ref3}
-              src="./testione.png"
+              src="./zita.png"
               className="mt-10 w-44 cursor-pointer rounded-[24px] border"
               alt=""
             />
           </div>
 
-          <div className="col-span-6 col-start-4">
-            <div className="flex h-full flex-col  items-center justify-center py-20">
-              <h1 className="my-thing text-bold text-center text-[54px] font-bold md:w-[752px]">
-                Connecting People
+          <div className="col-span-12  md:col-span-6  lg:col-span-6 lg:col-start-4">
+            <div className="mx-auto flex h-full flex-col items-center justify-center px-3 py-8 md:py-20">
+              <h1 className="text-bold my-4 text-center text-2xl font-bold md:w-full md:text-4xl lg:text-5xl">
+                Connecting People{" "}
                 <Typewriter
                   options={{
-                    strings: ["Who Need Assistance With Those Offering Help"],
+                    strings: ["Who Need Assistance With Those Offering Help."],
                     autoStart: true,
                     loop: true,
                   }}
                 />
               </h1>
-
-              <p className="w-[900px] text-center text-[22px]">
-                WorkConnect Is An Innovative Online Platform Designed <br />
-                To Facilitate Local Collaboration By Connecting Users Who Need
-                Assistance <br /> With Their Day-To-Day Tasks.
+              <p className="my-4  text-center text-lg md:text-xl lg:text-2xl">
+                WorkConnect Is An Innovative Online Platform Designed To
+                Facilitate Local Collaboration By Connecting Users Who Need
+                Assistance With Their Day-To-Day Tasks.
               </p>
               <button
                 type="button"
-                className="my-10 rounded-full bg-[#FFDD00] p-4 px-6 text-center text-2xl font-bold text-black"
+                className="my-6 rounded-full bg-[#FFDD00] p-3 px-5 text-center text-lg font-bold text-black md:p-4 md:px-6 md:text-xl"
               >
                 Join Now
               </button>
             </div>
           </div>
-          <div className="col-span-3 col-start-10">
+
+          <div className="col-span-3 col-start-10 hidden md:block">
             <img
               ref={left1}
-              src="./testitwo.png"
+              src="./math.png"
               className="w-44  cursor-pointer rounded-[24px] border"
               alt=""
             />
 
             <img
               ref={left2}
-              src="./creator.png"
+              src="./divya.png"
               className="mt-10 w-44  cursor-pointer rounded-[24px] border"
               alt=""
             />
 
             <img
               ref={left3}
-              src="./creator.png"
+              src="./vihaan.png"
               className="ml-16 mt-10 w-40 cursor-pointer rounded-[24px] border"
               alt=""
             />
@@ -110,50 +110,49 @@ const Home = () => {
         </div>
       </Fade>
 
-      <Fade className="mx-20 my-10 flex flex-col items-center justify-center rounded-[48px] bg-white p-48">
-        <div>
-          <h1 className="my-thing text-bold mx-auto text-center text-[54px] font-bold md:w-[752px]">
+      <Fade className="mx-5 my-10 flex flex-col items-center justify-center rounded-lg bg-white p-8 md:p-12">
+        <div className="">
+          <h1 className="text-bold my-4  text-center text-2xl font-bold md:w-3/4 md:text-4xl lg:w-full lg:text-5xl">
             Find your suitable person.
           </h1>
-          <p className="mb-10 w-[900px] text-center text-[22px]">
-            Get all the local works/tasks listing available near your locality
+          <p className="mb-6 text-center text-lg md:mb-10 md:text-xl lg:text-2xl">
+            Get all the local works/tasks listings available near your locality
             in just simple clicks.
           </p>
-          <div className="flex space-x-10">
-            <div className="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
-              <div className="card glass w-64 bg-base-100 shadow-xl">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            <div className="w-full transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110 md:w-auto">
+              <div className="card glass bg-base-100 shadow-xl">
                 <figure>
                   <img
                     src="https://media.istockphoto.com/id/1449552590/photo/portrait-of-indian-woman-enjoying-while-cooking-meal-in-the-kitchen-stock-photo.jpg?s=612x612&w=0&k=20&c=sSSFGWffGnjDJEX_VCA3YQ5B3T1jQ_0kCbPTL0BItlg="
-                    alt="Shoes"
+                    alt="Cook"
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title mx-auto">Find Cook</h2>
+                  <h2 className="card-title text-center">Find Cook</h2>
                 </div>
               </div>
             </div>
-            <div className="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
-              <div className="card glass w-64 bg-base-100 shadow-xl">
+            <div className="w-full transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110 md:w-auto">
+              <div className="card glass bg-base-100 shadow-xl">
                 <figure>
-                  <img src="./car_washer.jpg" alt="Shoes" />
+                  <img src="./car_washer.jpg" alt="Car Washer" />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title mx-auto">Find Car Washer</h2>
+                  <h2 className="card-title text-center">Find Car Washer</h2>
                 </div>
               </div>
             </div>
-
-            <div className="transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110">
-              <div className="card glass w-64 bg-base-100 shadow-xl">
+            <div className="w-full transform rounded-lg px-4 py-6 transition duration-500 hover:scale-110 md:w-auto">
+              <div className="card glass bg-base-100 shadow-xl">
                 <figure>
                   <img
                     src="https://qph.cf2.quoracdn.net/main-qimg-56fad305fc7134be522d1c4e73521f09"
-                    alt="Shoes"
+                    alt="Dog Trainer"
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title mx-auto">Find Dog Trainer</h2>
+                  <h2 className="card-title text-center">Find Dog Trainer</h2>
                 </div>
               </div>
             </div>
@@ -161,17 +160,17 @@ const Home = () => {
         </div>
       </Fade>
 
-      <Fade className="mx-20 my-10 flex flex-col items-center justify-center rounded-[48px] bg-white p-48">
+      <Fade className="mx-4 my-4 flex flex-col items-center justify-center rounded-lg bg-white p-8 md:mx-20 md:my-10 md:p-12">
         <div>
-          <h1 className="my-thing text-bold mx-auto text-center text-[54px] font-bold md:w-[752px]">
+          <h1 className="text-bold my-2 text-center text-3xl font-bold md:w-3/4 md:text-4xl lg:w-full lg:text-5xl">
             Access Everything Within Your Dashboard.
           </h1>
-          <p className="mb-10  text-center text-[22px]">
+          <p className="mb-6 text-center text-lg md:text-xl lg:text-2xl">
             Simple Minimal Dashboard
           </p>
-          <div>
+          <div className="mx-auto max-w-screen-md">
             <img
-              className="mx-auto rounded-lg  border-4 p-10"
+              className="mx-auto rounded-lg border-4 p-4 md:p-10"
               src="./workconnect_dashboard.png"
               alt=""
             />

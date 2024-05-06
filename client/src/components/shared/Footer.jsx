@@ -6,7 +6,7 @@ const Footer = () => {
       <nav>
         <div className="grid grid-flow-col gap-4">
           <Link to="/">
-            <img className="w-72" src="./workconnectlogo.svg" alt="" />
+            <img className="w-72" src="./workconnect_logo.png" alt="" />
           </Link>
         </div>
       </nav>
