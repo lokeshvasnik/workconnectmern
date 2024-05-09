@@ -38,7 +38,6 @@ const CreateJob = () => {
   async function onSubmitHandler(formData) {
     console.log(formData);
     try {
-      // const newUser = { email, password, confirmPassword, username };
       const { title, description, location, number } = formData;
       const config = {
         headers: {

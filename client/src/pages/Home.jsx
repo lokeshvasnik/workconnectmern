@@ -2,6 +2,7 @@ import Typewriter from "typewriter-effect";
 import Footer from "../components/shared/Footer";
 import { useParallax } from "react-scroll-parallax";
 import { Fade } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { ref } = useParallax({
@@ -31,8 +32,6 @@ const Home = () => {
     easing: "easeOutQuad",
     translateX: [-10, 40],
   });
-
-  // Grid bana k
 
   return (
     <section>
@@ -76,12 +75,13 @@ const Home = () => {
                 Facilitate Local Collaboration By Connecting Users Who Need
                 Assistance With Their Day-To-Day Tasks.
               </p>
-              <button
+              <Link
+                to="/login"
                 type="button"
                 className="my-6 rounded-full bg-[#FFDD00] p-3 px-5 text-center text-lg font-bold text-black md:p-4 md:px-6 md:text-xl"
               >
                 Join Now
-              </button>
+              </Link>
             </div>
           </div>
 

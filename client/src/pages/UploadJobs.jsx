@@ -9,7 +9,8 @@ const CreateJobs = () => {
   const { userData } = useContext(UserContext);
   const [userJobData, setdata] = useState([]);
   const [jobId, setJobId] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [image, setFiles] = useState("");
 
   console.log(userJobData);
@@ -29,8 +30,10 @@ const CreateJobs = () => {
           }`,
         );
         setdata(userJobs.data);
+        setLoading(false);
       } catch (error) {
         console.log(error);
+        setLoading(false);
       }
     };
     getUserJobsDetails();
@@ -121,43 +124,53 @@ const CreateJobs = () => {
         </h1>
       </div>
       <div className="grid grid-cols-9 grid-rows-1 gap-12">
-        {userJobData.length === 0 ? (
-          <div className="col-span-9 text-center text-2xl">No uploads yet.</div>
+        {loading ? (
+          <div className="col-span-12 flex items-center justify-center">
+            <span className="loading loading-spinner loading-lg text-3xl text-warning"></span>
+          </div>
         ) : (
-          userJobData?.map((item) => (
-            <div className="col-span-3" key={item._id}>
-              <div className="mb-5 w-80 rounded-lg bg-white p-8">
-                <div>
-                  <img
-                    src={`http://localhost:3000/${item.image}`}
-                    className="w-32 rounded-md"
-                    alt=""
-                  />
-                  <div className="mt-4">
-                    <p>{item.title}</p>
-                    <p>
-                      Location: {item.location} {item.pincode}
-                    </p>
-                    <p>{item.description}</p>
-                  </div>
-                  <div className="mt-4  flex items-center justify-between rounded-md bg-[#ffdd00c9] p-4 ">
-                    <button
-                      className="rounded-[7px] bg-white px-[24px] py-[7px] hover:bg-green-300"
-                      onClick={() => editHandler(item._id)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="rounded-[7px] bg-white px-[24px] py-[7px] hover:bg-red-400"
-                      onClick={() => handleDelete(item._id)}
-                    >
-                      Delete
-                    </button>
+          <>
+            {userJobData.length === 0 ? (
+              <div className="col-span-9 text-center text-2xl">
+                No uploads yet.
+              </div>
+            ) : (
+              userJobData?.map((item) => (
+                <div className="col-span-3" key={item._id}>
+                  <div className="mb-5 w-80 rounded-lg bg-white p-8">
+                    <div>
+                      <img
+                        src={`${import.meta.env.VITE_API_URL}/${item.image}`}
+                        className="w-32 rounded-md"
+                        alt=""
+                      />
+                      <div className="mt-4">
+                        <p>{item.title}</p>
+                        <p>
+                          Location: {item.location} {item.pincode}
+                        </p>
+                        <p>{item.description}</p>
+                      </div>
+                      <div className="mt-4  flex items-center justify-between rounded-md bg-[#ffdd00c9] p-4 ">
+                        <button
+                          className="rounded-[7px] bg-white px-[24px] py-[7px] hover:bg-green-300"
+                          onClick={() => editHandler(item._id)}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className="rounded-[7px] bg-white px-[24px] py-[7px] hover:bg-red-400"
+                          onClick={() => handleDelete(item._id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))
+              ))
+            )}
+          </>
         )}
       </div>
 
@@ -292,29 +305,3 @@ const CreateJobs = () => {
 };
 
 export default CreateJobs;
-
-// {
-//   /* <div class="formbold-input-flex">
-//                                   <div>
-//                                     <label
-//                                       for="image"
-//                                       class="formbold-form-label"
-//                                     >
-//                                       {" "}
-//                                       Upload Image{" "}
-//                                     </label>
-//                                     <input
-//                                       type="file"
-//                                       accept="image/*"
-//                                       {...register("image", {
-//                                         required: true,
-//                                       })}
-//                                       onChange={(event) => {
-//                                         setFiles(event.target.files);
-//                                       }}
-//                                       className="my-4 w-full rounded border border-none file:cursor-pointer file:rounded file:border-none file:bg-slate-100 file:p-2"
-//                                     />
-//                                   </div>
-
-//                                 </div> */
-// }

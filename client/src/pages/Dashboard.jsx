@@ -1,12 +1,23 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { getLocation } from "../utils/location";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Dashboard = () => {
   const [userJob, setUserJob] = useState([]);
-  const [location, setLocation] = useState("400028");
-  const [loading, setLoading] = useState(true); // State to manage loading
+  const [location, setLocation] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  const { postcode } = location;
+
+  useEffect(() => {
+    const location = async () => {
+      const userJobs = await getLocation();
+      setLocation(userJobs);
+    };
+    location();
+  }, []);
 
   useEffect(() => {
     const getUserJobsDetails = async () => {
@@ -14,28 +25,28 @@ const Dashboard = () => {
         const userJobs = await axios.get(
           `${import.meta.env.VITE_API_URL}/getJobs`,
         );
+
         setUserJob(userJobs);
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false);
       } catch (error) {
         console.error(error);
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false);
       }
     };
     getUserJobsDetails();
   }, []);
 
   // Filter jobs where location matches postcode
-  const filteredJobs = userJob.data?.filter((job) => job.pincode === location);
+  const filteredJobs = userJob.data?.filter((job) => job.pincode === postcode);
 
   return (
     <>
       <div className="px-6 py-0">
         {/* Grid 1 */}
         <div className="grid grid-cols-9 grid-rows-1 gap-12">
-          {loading ? ( // Render spinner if loading is <true></true>
+          {loading ? (
             <div className="col-span-12 flex items-center justify-center">
               <span className="loading loading-spinner loading-lg text-3xl text-warning"></span>
-              {/* Replace Spinner with your actual spinner component */}
             </div>
           ) : (
             filteredJobs != undefined &&
